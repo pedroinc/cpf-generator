@@ -29,6 +29,9 @@ def validate(cpf):
     remain = sum(calc_list) % 11
     is_valid = get_digit(remain=remain) == int(digits[0])
 
+    if not is_valid:
+        return False
+    
     # step two
     main_part = cpf[:10]
     controller = 11
